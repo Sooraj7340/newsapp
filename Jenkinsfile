@@ -20,8 +20,8 @@ pipeline{
         stage('Containerisation'){
             steps{
                 sh '''
-            docker stop c1
-            docker rm c1
+            docker stop c1 || true
+            docker rm c1 || true
             docker run -d --name c1 -p 3000:3000 suraj7340/one9:1
             '''
             }
