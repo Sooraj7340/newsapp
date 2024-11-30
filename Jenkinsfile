@@ -2,6 +2,11 @@ pipeline{
     agent any
 
     stages{
+        stage('Verify Git') {
+            steps {
+                sh 'git --version'
+            }
+        }
         stage('Git Checkout'){
             git branch: 'dev', url: 'https://github.com/Sooraj7340/newsapp.git'
         }
